@@ -28,15 +28,16 @@ public class Slag {
     public PlayingCard slagWinner() {
         PlayingCard winner = cards.get(0);
         for (PlayingCard card : cards) {
-            if (isVolger(card, gevraagd) && card.getCardRank().getRank() > winner.getCardRank().getRank()) {
-                winner = card;
-            } else if (card.isTroef()) {
+            if (card.isTroef()) {
                 if (!winner.isTroef()) {
                     winner = card;
                 } else if (card.getCardRank().getTroefRank() > winner.getCardRank().getTroefRank()) {
                     winner = card;
                 }
+            } else if (isVolger(card, gevraagd) && card.getCardRank().getRank() > winner.getCardRank().getRank()) {
+                winner = card;
             }
+
         }
         return winner;
     }
