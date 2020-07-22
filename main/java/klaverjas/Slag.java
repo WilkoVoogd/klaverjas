@@ -33,7 +33,7 @@ public class Slag {
             } else if (card.isTroef()) {
                 if (!winner.isTroef()) {
                     winner = card;
-                } else if (card.getCardRank().getRank() > winner.getCardRank().getRank()) {
+                } else if (card.getCardRank().getTroefRank() > winner.getCardRank().getTroefRank()) {
                     winner = card;
                 }
             }
