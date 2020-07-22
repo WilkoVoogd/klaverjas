@@ -11,7 +11,7 @@ public class ValueCalculator {
             return card.getNormalValue();}
     }
 
-    public int calulateValue(List<PlayingCard> cards) {
+    public int calculateValue(List<PlayingCard> cards) {
         int valueOfCards = 0;
         for (PlayingCard card : cards) {
             valueOfCards += calculateValue(card);

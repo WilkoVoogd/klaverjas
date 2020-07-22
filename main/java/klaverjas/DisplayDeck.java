@@ -20,7 +20,10 @@ public class DisplayDeck {
             CardSuit troef = CardSuit.values()[troefSuit];
             System.out.println(troef);
             for (PlayingCard card : slagCards) {
-                card.setTroef(true);
+                if (card.getCardSuit().equals(troef)) {
+                    card.setTroef(true);
+                }
+
             }
 
             Slag slag = new Slag(slagCards, troef);
@@ -28,7 +31,7 @@ public class DisplayDeck {
             System.out.println("Winner: " + slag.slagWinner().toString());
             System.out.println();
 
-            System.out.println(slag.slagValue());
+            System.out.println(slag.getValue());
             System.out.println("----------------");
         }
     }

@@ -9,12 +9,20 @@ public class Slag {
     private List<PlayingCard> cards = new ArrayList<>();
     private CardSuit troef;
     private List<PlayingCard> troefCards;
+    private int value;
 
     public Slag(List<PlayingCard> cards, CardSuit troef) {
         this.cards.addAll(cards);
         this.troef = troef;
         this.gevraagd = cards.get(0).getCardSuit();
         this.troefCards = addTroefCardsToTroefCardsList();
+        setTroefCards();
+    }
+
+    private void setTroefCards() {
+        for (PlayingCard card : troefCards) {
+            card.setTroef(true);
+        }
     }
 
     public PlayingCard slagWinner() {
@@ -57,8 +65,15 @@ public class Slag {
         return card.getCardSuit().equals(gevraagd);
     }
 
-    public int slagValue() {
-        ValueCalculator calculator = new ValueCalculator();
-        return calculator.calulateValue(this.cards);
+    public void setValue() {
+        this.value = new ValueCalculator().calculateValue(this.cards);
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public List<PlayingCard> getCards() {
+        return this.cards;
     }
 }
