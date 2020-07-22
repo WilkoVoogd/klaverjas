@@ -27,14 +27,6 @@ public class Slag {
 
     public PlayingCard slagWinner() {
         PlayingCard winner = cards.get(0);
-       /* if (troefCards.size() > 0) {
-            winner = troefCards.get(0);
-            for (PlayingCard card : troefCards) {
-                if (card.getCardRank().getRank() > winner.getCardRank().getRank()) {
-                    winner = card;
-                }
-            }
-        } else {*/
         for (PlayingCard card : cards) {
             if (isVolger(card, gevraagd) && card.getCardRank().getRank() > winner.getCardRank().getRank()) {
                 winner = card;
