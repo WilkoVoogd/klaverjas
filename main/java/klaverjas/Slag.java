@@ -27,16 +27,21 @@ public class Slag {
 
     public PlayingCard slagWinner() {
         PlayingCard winner = cards.get(0);
-        if (troefCards.size() > 0) {
+       /* if (troefCards.size() > 0) {
             winner = troefCards.get(0);
             for (PlayingCard card : troefCards) {
                 if (card.getCardRank().getRank() > winner.getCardRank().getRank()) {
                     winner = card;
                 }
             }
-        } else {
-            for (PlayingCard card : cards) {
-                if (isVolger(card, gevraagd) && card.getCardRank().getRank() > winner.getCardRank().getRank()) {
+        } else {*/
+        for (PlayingCard card : cards) {
+            if (isVolger(card, gevraagd) && card.getCardRank().getRank() > winner.getCardRank().getRank()) {
+                winner = card;
+            } else if (card.isTroef()) {
+                if (!winner.isTroef()) {
+                    winner = card;
+                } else if (card.getCardRank().getRank() > winner.getCardRank().getRank()) {
                     winner = card;
                 }
             }
@@ -50,7 +55,8 @@ public class Slag {
             if (card.getCardSuit().equals(troef)) {
                 troefCards.add(card);
             }
-        } return troefCards;
+        }
+        return troefCards;
     }
 
     public PlayingCard getHighCard(PlayingCard card, PlayingCard otherCard) throws Exception {
