@@ -1,27 +1,29 @@
 package klaverjas;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Slag {
 
     private final CardSuit gevraagd;
-    private List<PlayingCard> cards = new ArrayList<>();
-    private CardSuit troef;
-    private List<PlayingCard> troefCards;
+    private final List<PlayingCard> cards;
+    private final CardSuit troef;
     private int value;
 
-    public Slag(List<PlayingCard> cards, CardSuit troef) {
-        this.cards.addAll(cards);
+    public Slag(PlayingCard[] cards , CardSuit troef) {
+        this.cards = Arrays.asList(cards);
         this.troef = troef;
-        this.gevraagd = cards.get(0).getCardSuit();
-        this.troefCards = addTroefCardsToTroefCardsList();
-        setTroefCards();
+        this.gevraagd = this.cards.get(0).getCardSuit();
+        appointTroefCards();
+        setValue();
     }
 
-    private void setTroefCards() {
-        for (PlayingCard card : troefCards) {
-            card.setTroef(true);
+    private void appointTroefCards() {
+        for (PlayingCard card : cards) {
+            if (card.getCardSuit().equals(troef)) {
+                card.setTroef(true);
+            }
         }
     }
 
@@ -40,24 +42,6 @@ public class Slag {
 
         }
         return winner;
-    }
-
-    private List<PlayingCard> addTroefCardsToTroefCardsList() {
-        List<PlayingCard> troefCards = new ArrayList<>();
-        for (PlayingCard card : cards) {
-            if (card.getCardSuit().equals(troef)) {
-                troefCards.add(card);
-            }
-        }
-        return troefCards;
-    }
-
-    public PlayingCard getHighCard(PlayingCard card, PlayingCard otherCard) throws Exception {
-        if (card.getCardRank().getRank() > otherCard.getCardRank().getRank()) {
-            return card;
-        } else if (otherCard.getCardRank().getRank() > card.getCardRank().getRank()) {
-            return otherCard;
-        } else throw new Exception("Cards are of equal rankValue");
     }
 
     public boolean isVolger(PlayingCard card, CardSuit gevraagd) {
