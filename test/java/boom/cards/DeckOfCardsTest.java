@@ -1,4 +1,4 @@
-package klaverjas;
+package boom.cards;
 
 import boom.cards.DeckOfCards;
 import boom.cards.PlayingCard;

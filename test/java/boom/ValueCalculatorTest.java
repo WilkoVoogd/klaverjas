@@ -1,4 +1,4 @@
-package klaverjas;
+package boom;
 
 import boom.ValueCalculator;
 import boom.cards.CardRank;

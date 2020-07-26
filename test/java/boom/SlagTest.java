@@ -1,4 +1,4 @@
-package klaverjas;
+package boom;
 
 import boom.Slag;
 import boom.cards.CardRank;
@@ -26,26 +26,33 @@ class SlagTest {
     }
 
     @Test
-    void slagWinnerWithTwoTroef() {
-        Slag slag = new Slag(cards, CardSuit.CLUBS);
-        assertTrue(slag.slagWinner().equals(new PlayingCard(CardRank.NINE, CardSuit.CLUBS)));
+    void slagWinnerWithTroef() {
+        Round round = new Round(CardSuit.HEARTS);
+        Slag slag = new Slag(cards, round);
+        slag.getCards().get(3).setTroef(true);
+        assertTrue(slag.slagWinner().equals(new PlayingCard(CardRank.ACE, CardSuit.HEARTS)));
     }
 
     @Test
     void slagWinnerWithNoTroef() {
-        Slag slag = new Slag(cards, CardSuit.SPADES);
+        Round round = new Round(CardSuit.CLUBS);
+        Slag slag = new Slag(cards, round);
         assertTrue(slag.slagWinner().equals(new PlayingCard(CardRank.TEN, CardSuit.CLUBS)));
     }
 
     @Test
     void slagWinnerWithTroefGevraagd() {
-        Slag slag = new Slag(cards, CardSuit.CLUBS);
+        Round round = new Round(CardSuit.CLUBS);
+        Slag slag = new Slag(cards, round);
+        slag.getCards().get(0).setTroef(true);
+        slag.getCards().get(2).setTroef(true);
         assertTrue(slag.slagWinner().equals(new PlayingCard(CardRank.NINE, CardSuit.CLUBS)));
     }
 
     @Test
     void isVolger() {
-        Slag slag = new Slag(cards, CardSuit.CLUBS);
+        Round round = new Round(CardSuit.CLUBS);
+        Slag slag = new Slag(cards, round);
         List<PlayingCard> slagCards = slag.getCards();
         assertFalse(slag.isVolger(slagCards.get(1), slagCards.get(0).getCardSuit()));
         assertTrue(slag.isVolger(slagCards.get(2), slagCards.get(0).getCardSuit()));
