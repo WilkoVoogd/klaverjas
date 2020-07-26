@@ -1,6 +1,7 @@
 package klaverjas;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,6 +18,11 @@ public class DeckOfCards {
                 cards.add(new PlayingCard(rank, suit));
             }
         }
+        shuffle();
+    }
+
+    private void shuffle() {
+        Collections.shuffle(cards);
     }
 
     public String getCard(CardSuit cardSuit, CardRank cardRank) {

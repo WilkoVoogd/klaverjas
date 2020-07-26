@@ -1,0 +1,9 @@
+package Boom;
+
+import java.util.List;
+
+public class Boom {
+    private List<Player> players;
+    private List<Round> rounds;
+    private static final int NUMBER_OF_ROUNDS = 16;
+}
