@@ -15,10 +15,10 @@ class ValueCalculatorTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        PlayingCard jackOfClubs = new PlayingCard(CardRank.JACK, CardSuit.CLUBS); // value = 20
-        PlayingCard eightOfClubs = new PlayingCard(CardRank.EIGHT, CardSuit.CLUBS); // value = 0
-        PlayingCard tenOfHearts = new PlayingCard(CardRank.TEN, CardSuit.HEARTS); // value = 10
-        PlayingCard jackOfDiamonds = new PlayingCard(CardRank.JACK, CardSuit.DIAMONDS); // value = 2
+        PlayingCard jackOfClubs = new PlayingCard(CardRank.JACK, CardSuit.CLUBS); // value = 2, troefValue = 20
+        PlayingCard eightOfClubs = new PlayingCard(CardRank.EIGHT, CardSuit.CLUBS); // value = 0, troefValue = 0
+        PlayingCard tenOfHearts = new PlayingCard(CardRank.TEN, CardSuit.HEARTS); // value = 10, troefValue = 10
+        PlayingCard jackOfDiamonds = new PlayingCard(CardRank.JACK, CardSuit.DIAMONDS); // value = 2, troefValue = 20
         this.card = jackOfClubs;
         this.cards = Arrays.asList(jackOfClubs, eightOfClubs, tenOfHearts, jackOfDiamonds);
     }
@@ -36,7 +36,14 @@ class ValueCalculatorTest {
     }
 
     @Test
-    void testCaclulateValueOfListOfCards() {
+    void testCaclulateValueOfListOfCardsWithTroef() {
+        cards.get(0).setTroef(true);
+        cards.get(1).setTroef(true);
         assertEquals(32, new ValueCalculator().calculateValue(cards));
+    }
+
+    @Test
+    void testCaclulateValueOfListOfCardsWithoutTroef() {
+        assertEquals(14, new ValueCalculator().calculateValue(cards));
     }
 }
