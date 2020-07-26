@@ -1,4 +1,4 @@
-package klaverjas;
+package boom.cards;
 
 public enum CardRank {
         SEVEN(1, 1,0,0),

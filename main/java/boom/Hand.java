@@ -1,6 +1,6 @@
-package Boom;
+package boom;
 
-import klaverjas.PlayingCard;
+import boom.cards.PlayingCard;
 
 import java.util.ArrayList;
 import java.util.List;

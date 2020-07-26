@@ -1,6 +1,8 @@
-package klaverjas;
+package boom;
 
-import java.util.ArrayList;
+import boom.cards.CardSuit;
+import boom.cards.PlayingCard;
+
 import java.util.Arrays;
 import java.util.List;
 

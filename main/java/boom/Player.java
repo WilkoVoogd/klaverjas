@@ -1,4 +1,4 @@
-package Boom;
+package boom;
 
 public class Player {
     private String name;

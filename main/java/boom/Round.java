@@ -1,6 +1,4 @@
-package Boom;
-
-import klaverjas.Slag;
+package boom;
 
 import java.util.List;
 

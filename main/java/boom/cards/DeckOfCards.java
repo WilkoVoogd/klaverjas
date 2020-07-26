@@ -1,4 +1,4 @@
-package klaverjas;
+package boom.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;

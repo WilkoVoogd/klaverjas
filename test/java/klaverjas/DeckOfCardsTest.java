@@ -1,5 +1,7 @@
 package klaverjas;
 
+import boom.cards.DeckOfCards;
+import boom.cards.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

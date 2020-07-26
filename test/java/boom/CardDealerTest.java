@@ -1,5 +1,6 @@
-package Boom;
+package boom;
 
+import boom.cards.CardDealer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

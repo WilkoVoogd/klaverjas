@@ -1,4 +1,4 @@
-package Boom;
+package boom;
 
 public class Maten {
     private Player playerOne;

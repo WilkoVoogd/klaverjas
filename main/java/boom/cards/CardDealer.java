@@ -1,7 +1,7 @@
-package Boom;
+package boom.cards;
 
-import klaverjas.DeckOfCards;
-import klaverjas.PlayingCard;
+import boom.Hand;
+import boom.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class CardDealer {
 
     public CardDealer() {
         this.deck = new DeckOfCards();
-        hands = new ArrayList<Hand>();
+        hands = new ArrayList<>();
         createHands();
     }
 

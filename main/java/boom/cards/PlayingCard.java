@@ -1,4 +1,4 @@
-package klaverjas;
+package boom.cards;
 
 public class PlayingCard {
 

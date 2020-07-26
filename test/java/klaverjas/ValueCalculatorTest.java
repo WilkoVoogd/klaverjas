@@ -1,8 +1,11 @@
 package klaverjas;
 
+import boom.ValueCalculator;
+import boom.cards.CardRank;
+import boom.cards.CardSuit;
+import boom.cards.PlayingCard;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,5 +1,9 @@
 package klaverjas;
 
+import boom.Slag;
+import boom.cards.CardRank;
+import boom.cards.CardSuit;
+import boom.cards.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

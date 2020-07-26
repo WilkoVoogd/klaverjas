@@ -1,4 +1,4 @@
-package Boom;
+package boom;
 
 import java.util.List;
 
