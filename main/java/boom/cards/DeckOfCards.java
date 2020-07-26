@@ -1,5 +1,7 @@
 package boom.cards;
 
+import boom.Round;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,7 +12,7 @@ public class DeckOfCards {
     public static int numRanks = 13;
     public static int numCards = numSuits * numRanks;
 
-    private List<PlayingCard> cards = new ArrayList<>();
+    private final List<PlayingCard> cards = new ArrayList<>();
 
     public DeckOfCards() {
         for (CardSuit suit : CardSuit.values()) {

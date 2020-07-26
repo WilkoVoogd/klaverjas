@@ -1,5 +1,7 @@
 package boom.cards;
 
+import boom.Player;
+
 public class PlayingCard {
 
     private final CardRank rank;
@@ -7,6 +9,7 @@ public class PlayingCard {
     private final int troefValue;
     private final int normalValue;
     private boolean troef;
+    private Player owner;
 
     public PlayingCard(CardRank rank, CardSuit suit) {
         this.rank = rank;
@@ -84,5 +87,13 @@ public class PlayingCard {
 
     public int getNormalValue() {
         return normalValue;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 }

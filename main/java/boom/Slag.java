@@ -3,30 +3,36 @@ package boom;
 import boom.cards.CardSuit;
 import boom.cards.PlayingCard;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Slag {
 
-    private final CardSuit gevraagd;
+    private final Round round;
+    private CardSuit gevraagd;
     private final List<PlayingCard> cards;
-    private final CardSuit troef;
     private int value;
 
-    public Slag(PlayingCard[] cards , CardSuit troef) {
+    public Slag(PlayingCard[] cards, Round round) {
         this.cards = Arrays.asList(cards);
-        this.troef = troef;
         this.gevraagd = this.cards.get(0).getCardSuit();
-        appointTroefCards();
+        this.round = round;
         setValue();
     }
 
-    private void appointTroefCards() {
-        for (PlayingCard card : cards) {
-            if (card.getCardSuit().equals(troef)) {
-                card.setTroef(true);
-            }
-        }
+    public Slag(Round round) {
+        this.cards = new ArrayList<>();
+        this.round = round;
+        setValue();
+    }
+
+    public void setGevraagd(CardSuit gevraagd) {
+        this.gevraagd = gevraagd;
+    }
+
+    public void addCard(PlayingCard card) {
+        this.cards.add(card);
     }
 
     public PlayingCard slagWinner() {

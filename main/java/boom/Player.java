@@ -5,6 +5,7 @@ public class Player {
     private Player maat;
     private Hand hand;
     private Position position;
+    private boolean voorzitter;
 
     public Player(String name) {
         this.name = name;
@@ -36,5 +37,13 @@ public class Player {
 
     public Position getPosition() {
         return position;
+    }
+
+    public boolean isVoorzitter() {
+        return voorzitter;
+    }
+
+    public void setVoorzitter(boolean voorzitter) {
+        this.voorzitter = voorzitter;
     }
 }
