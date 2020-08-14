@@ -2,7 +2,7 @@ package boom.cards;
 
 import boom.Player;
 
-public class PlayingCard {
+public class Card {
 
     private final CardRank rank;
     private final CardSuit suit;
@@ -11,7 +11,7 @@ public class PlayingCard {
     private boolean troef;
     private Player owner;
 
-    public PlayingCard(CardRank rank, CardSuit suit) {
+    public Card(CardRank rank, CardSuit suit) {
         this.rank = rank;
         this.suit = suit;
         this.troefValue = this.getCardRank().getTroefValue();
@@ -69,7 +69,7 @@ public class PlayingCard {
         return rankToString(this.rank) + " of " + suitToString();
     }
 
-    public boolean equals(PlayingCard otherCard) {
+    public boolean equals(Card otherCard) {
         return (this.getCardRank().equals(otherCard.getCardRank()) && this.getCardSuit().equals(otherCard.getCardSuit()));
     }
 

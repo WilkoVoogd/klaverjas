@@ -1,7 +1,5 @@
 package boom.cards;
 
-import boom.cards.DeckOfCards;
-import boom.cards.PlayingCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +19,7 @@ class DeckOfCardsTest {
 
     @Test
     void testCardsInDeckAreUnique() {
-        Set<PlayingCard> uniqueCards = new HashSet<>(deck.getPlayingCards());
+        Set<Card> uniqueCards = new HashSet<>(deck.getPlayingCards());
         assertEquals(uniqueCards.size(), deck.getPlayingCards().size());
     }
 

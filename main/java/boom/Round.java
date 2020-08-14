@@ -2,7 +2,7 @@ package boom;
 
 import boom.cards.CardSuit;
 import boom.cards.DeckOfCards;
-import boom.cards.PlayingCard;
+import boom.cards.Card;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class Round {
     }
 
     private void appointTroefCards() {
-        for (PlayingCard card : deck.getPlayingCards()) {
+        for (Card card : deck.getPlayingCards()) {
             if (card.getCardSuit().equals(getTroef())) {
                 card.setTroef(true);
             }

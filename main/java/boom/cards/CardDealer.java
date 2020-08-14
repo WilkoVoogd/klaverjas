@@ -36,10 +36,10 @@ public class CardDealer {
 
     }
 
-    private PlayingCard getRandomCard() {
+    private Card getRandomCard() {
         Random random = new Random();
         int index = random.nextInt(deck.getPlayingCards().size());
-        PlayingCard card = deck.getPlayingCards().get(index);
+        Card card = deck.getPlayingCards().get(index);
         deck.getPlayingCards().remove(index);
         return card;
     }

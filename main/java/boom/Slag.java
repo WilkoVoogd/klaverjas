@@ -1,7 +1,7 @@
 package boom;
 
 import boom.cards.CardSuit;
-import boom.cards.PlayingCard;
+import boom.cards.Card;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,10 +11,10 @@ public class Slag {
 
     private final Round round;
     private CardSuit gevraagd;
-    private final List<PlayingCard> cards;
+    private final List<Card> cards;
     private int value;
 
-    public Slag(PlayingCard[] cards, Round round) {
+    public Slag(Card[] cards, Round round) {
         this.cards = Arrays.asList(cards);
         this.gevraagd = this.cards.get(0).getCardSuit();
         this.round = round;
@@ -31,13 +31,13 @@ public class Slag {
         this.gevraagd = gevraagd;
     }
 
-    public void addCard(PlayingCard card) {
+    public void addCard(Card card) {
         this.cards.add(card);
     }
 
-    public PlayingCard slagWinner() {
-        PlayingCard winner = cards.get(0);
-        for (PlayingCard card : cards) {
+    public Card slagWinner() {
+        Card winner = cards.get(0);
+        for (Card card : cards) {
             if (card.isTroef()) {
                 if (!winner.isTroef()) {
                     winner = card;
@@ -52,7 +52,7 @@ public class Slag {
         return winner;
     }
 
-    public boolean isVolger(PlayingCard card, CardSuit gevraagd) {
+    public boolean isVolger(Card card, CardSuit gevraagd) {
         return card.getCardSuit().equals(gevraagd);
     }
 
@@ -64,7 +64,7 @@ public class Slag {
         return value;
     }
 
-    public List<PlayingCard> getCards() {
+    public List<Card> getCards() {
         return this.cards;
     }
 }

@@ -1,12 +1,12 @@
 package boom;
 
-import boom.cards.PlayingCard;
+import boom.cards.Card;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
-    private List<PlayingCard> cards;
+    private List<Card> cards;
     private int numberOfCards;
 
     public Hand() {
@@ -14,15 +14,15 @@ public class Hand {
     }
 
 
-    public List<PlayingCard> getCards() {
+    public List<Card> getCards() {
         return cards;
     }
 
-    public void setCards(List<PlayingCard> cards) {
+    public void setCards(List<Card> cards) {
         this.cards = cards;
     }
 
-    public void addCard(PlayingCard card) {
+    public void addCard(Card card) {
         cards.add(card);
     }
 }
