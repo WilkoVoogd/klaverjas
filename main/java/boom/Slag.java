@@ -13,17 +13,13 @@ public class Slag {
     private CardSuit gevraagd;
     private final List<Card> cards;
     private int value;
+    private CardSuit troef;
 
     public Slag(Card[] cards, Round round) {
         this.cards = Arrays.asList(cards);
         this.gevraagd = this.cards.get(0).getCardSuit();
         this.round = round;
-        setValue();
-    }
-
-    public Slag(Round round) {
-        this.cards = new ArrayList<>();
-        this.round = round;
+        this.troef = round.getTroef();
         setValue();
     }
 
@@ -38,8 +34,8 @@ public class Slag {
     public Card slagWinner() {
         Card winner = cards.get(0);
         for (Card card : cards) {
-            if (card.isTroef()) {
-                if (!winner.isTroef()) {
+            if (card.isTroef(troef)) {
+                if (!winner.isTroef(troef)) {
                     winner = card;
                 } else if (card.getCardRank().getTroefRank() > winner.getCardRank().getTroefRank()) {
                     winner = card;
@@ -57,7 +53,7 @@ public class Slag {
     }
 
     public void setValue() {
-        this.value = new ValueCalculator().calculateValue(this.cards);
+        this.value = new ValueCalculator().calculateValue(this.cards, troef);
     }
 
     public int getValue() {

@@ -8,7 +8,6 @@ public class Card {
     private final CardSuit suit;
     private final int troefValue;
     private final int normalValue;
-    private boolean troef;
     private Player owner;
 
     public Card(CardRank rank, CardSuit suit) {
@@ -73,12 +72,8 @@ public class Card {
         return (this.getCardRank().equals(otherCard.getCardRank()) && this.getCardSuit().equals(otherCard.getCardSuit()));
     }
 
-    public boolean isTroef() {
-        return troef;
-    }
-
-    public void setTroef(boolean troef) {
-        this.troef = troef;
+    public boolean isTroef(CardSuit suit) {
+        return this.suit.equals(suit);
     }
 
     public int getTroefValue() {

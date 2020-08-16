@@ -28,13 +28,12 @@ class SlagTest {
     void slagWinnerWithTroef() {
         Round round = new Round(CardSuit.HEARTS);
         Slag slag = new Slag(cards, round);
-        slag.getCards().get(3).setTroef(true);
         assertTrue(slag.slagWinner().equals(new Card(CardRank.ACE, CardSuit.HEARTS)));
     }
 
     @Test
     void slagWinnerWithNoTroef() {
-        Round round = new Round(CardSuit.CLUBS);
+        Round round = new Round(CardSuit.SPADES);
         Slag slag = new Slag(cards, round);
         assertTrue(slag.slagWinner().equals(new Card(CardRank.TEN, CardSuit.CLUBS)));
     }
@@ -43,8 +42,6 @@ class SlagTest {
     void slagWinnerWithTroefGevraagd() {
         Round round = new Round(CardSuit.CLUBS);
         Slag slag = new Slag(cards, round);
-        slag.getCards().get(0).setTroef(true);
-        slag.getCards().get(2).setTroef(true);
         assertTrue(slag.slagWinner().equals(new Card(CardRank.NINE, CardSuit.CLUBS)));
     }
 

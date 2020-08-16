@@ -15,19 +15,10 @@ public class Round {
     public Round(CardSuit troef) {
         this.deck = new DeckOfCards();
         this.troef = troef;
-        appointTroefCards();
+       // appointTroefCards();
     }
 
     public CardSuit getTroef() {
         return this.troef;
     }
-
-    private void appointTroefCards() {
-        for (Card card : deck.getPlayingCards()) {
-            if (card.getCardSuit().equals(getTroef())) {
-                card.setTroef(true);
-            }
-        }
-    }
-
 }

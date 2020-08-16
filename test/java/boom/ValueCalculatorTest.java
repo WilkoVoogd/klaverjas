@@ -27,25 +27,21 @@ class ValueCalculatorTest {
 
     @Test
     void testCalculateValueOfNonTroefCard() {
-        card.setTroef(false);
-        assertEquals(2, new ValueCalculator().calculateValue(card));
+        assertEquals(2, new ValueCalculator().calculateValue(card, CardSuit.HEARTS));
     }
 
     @Test
     void testCalculateValueOfTroefCard() {
-        card.setTroef(true);
-        assertEquals(20, new ValueCalculator().calculateValue(card));
+        assertEquals(20, new ValueCalculator().calculateValue(card, CardSuit.CLUBS));
     }
 
     @Test
     void testCaclulateValueOfListOfCardsWithTroef() {
-        cards.get(0).setTroef(true);
-        cards.get(1).setTroef(true);
-        assertEquals(32, new ValueCalculator().calculateValue(cards));
+        assertEquals(32, new ValueCalculator().calculateValue(cards, CardSuit.CLUBS));
     }
 
     @Test
     void testCaclulateValueOfListOfCardsWithoutTroef() {
-        assertEquals(14, new ValueCalculator().calculateValue(cards));
+        assertEquals(14, new ValueCalculator().calculateValue(cards, CardSuit.SPADES));
     }
 }
