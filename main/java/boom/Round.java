@@ -2,7 +2,6 @@ package boom;
 
 import boom.cards.CardSuit;
 import boom.cards.DeckOfCards;
-import boom.cards.Card;
 
 import java.util.List;
 
@@ -15,7 +14,6 @@ public class Round {
     public Round(CardSuit troef) {
         this.deck = new DeckOfCards();
         this.troef = troef;
-       // appointTroefCards();
     }
 
     public CardSuit getTroef() {
