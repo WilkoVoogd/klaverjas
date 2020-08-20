@@ -1,6 +1,6 @@
 package game.cards;
 
-import game.Player;
+import game.player.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

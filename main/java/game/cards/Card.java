@@ -1,6 +1,6 @@
 package game.cards;
 
-import game.Player;
+import game.player.Player;
 
 public class Card {
 
