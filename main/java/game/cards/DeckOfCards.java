@@ -1,4 +1,4 @@
-package boom.cards;
+package game.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;

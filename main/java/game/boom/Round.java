@@ -1,7 +1,7 @@
-package boom;
+package game.boom;
 
-import boom.cards.CardSuit;
-import boom.cards.DeckOfCards;
+import game.cards.CardSuit;
+import game.cards.DeckOfCards;
 
 import java.util.List;
 

@@ -1,16 +1,16 @@
-package boom;
+package game.boom;
 
-import boom.cards.CardSuit;
-import boom.cards.Card;
+import game.ValueCalculator;
+import game.cards.CardSuit;
+import game.cards.Card;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Slag {
 
     private final Round round;
-    private CardSuit gevraagd;
+    private final CardSuit gevraagd;
     private final List<Card> cards;
     private int value;
     private CardSuit troef;
@@ -21,14 +21,6 @@ public class Slag {
         this.round = round;
         this.troef = round.getTroef();
         setValue();
-    }
-
-    public void setGevraagd(CardSuit gevraagd) {
-        this.gevraagd = gevraagd;
-    }
-
-    public void addCard(Card card) {
-        this.cards.add(card);
     }
 
     public Card slagWinner() {

@@ -1,4 +1,6 @@
-package boom;
+package game.boom;
+
+import game.Player;
 
 import java.util.List;
 

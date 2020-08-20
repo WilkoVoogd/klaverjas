@@ -1,4 +1,4 @@
-package boom.cards;
+package game.cards;
 
 public enum CardSuit {
     DIAMONDS,

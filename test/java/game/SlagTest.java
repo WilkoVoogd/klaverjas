@@ -1,8 +1,10 @@
-package boom;
+package game;
 
-import boom.cards.CardRank;
-import boom.cards.CardSuit;
-import boom.cards.Card;
+import game.boom.Round;
+import game.boom.Slag;
+import game.cards.CardRank;
+import game.cards.CardSuit;
+import game.cards.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

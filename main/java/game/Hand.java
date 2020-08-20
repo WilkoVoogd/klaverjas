@@ -1,6 +1,6 @@
-package boom;
+package game;
 
-import boom.cards.Card;
+import game.cards.Card;
 
 import java.util.ArrayList;
 import java.util.List;

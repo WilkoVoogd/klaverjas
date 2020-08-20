@@ -1,8 +1,8 @@
-package boom;
+package game;
 
-import boom.cards.CardRank;
-import boom.cards.CardSuit;
-import boom.cards.Card;
+import game.cards.CardRank;
+import game.cards.CardSuit;
+import game.cards.Card;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

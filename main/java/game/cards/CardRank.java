@@ -1,4 +1,4 @@
-package boom.cards;
+package game.cards;
 
 public enum CardRank {
         SEVEN(1, 1,0,0),

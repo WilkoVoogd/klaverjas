@@ -1,7 +1,7 @@
-package boom.cards;
+package game.cards;
 
-import boom.Hand;
-import boom.Player;
+import game.Hand;
+import game.Player;
 
 import java.util.ArrayList;
 import java.util.List;

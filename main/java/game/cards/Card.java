@@ -1,6 +1,6 @@
-package boom.cards;
+package game.cards;
 
-import boom.Player;
+import game.Player;
 
 public class Card {
 

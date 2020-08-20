@@ -1,4 +1,4 @@
-package boom;
+package game;
 
 public class Position {
 
