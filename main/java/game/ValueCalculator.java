@@ -7,14 +7,14 @@ import java.util.List;
 
 public class ValueCalculator {
 
-    public int calculateValue(Card card, CardSuit troef) {
+    private static int calculateValue(Card card, CardSuit troef) {
         if (card.isTroef(troef)) {
             return card.getTroefValue();
         } else {
             return card.getNormalValue();}
     }
 
-    public int calculateValue(List<Card> cards, CardSuit troef) {
+    public static int calculateValue(List<Card> cards, CardSuit troef) {
         int valueOfCards = 0;
         for (Card card : cards) {
             valueOfCards += calculateValue(card, troef);

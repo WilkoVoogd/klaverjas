@@ -45,7 +45,7 @@ public class Slag {
     }
 
     public void setValue() {
-        this.value = new ValueCalculator().calculateValue(this.cards, troef);
+        this.value = ValueCalculator.calculateValue(this.cards, troef);
     }
 
     public int getValue() {
